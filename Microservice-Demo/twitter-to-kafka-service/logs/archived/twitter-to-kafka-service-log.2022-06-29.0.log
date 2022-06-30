@@ -1,0 +1,45 @@
+2022-06-29 10:22:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 16.0.2 on LAPTOP-BM6U357P with PID 19184 (F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo\twitter-to-kafka-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo)
+2022-06-29 10:22:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-29 10:22:35 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.861 seconds (JVM running for 3.293)
+2022-06-29 10:22:35 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-06-29 10:22:35 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservice, Spring, Kafka, Elasticsearch]
+2022-06-29 10:22:35 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Hello MicroService
+2022-06-29 10:22:43 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - Starting mock filtering twitter stream for keywords [Java, Microservice, Spring, Kafka, Elasticsearch]
+2022-06-29 10:22:43 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Love AWS Pickning Microservice Azure Learninh self
+2022-06-29 10:22:53 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Love JAVA Programing Programing amet IPHone JAVA Azure Java Azure Ksow kai How Pickning Learninh self AWS
+2022-06-29 10:23:03 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text How Ksow kai Learninh self amet Elasticsearch Ksow kai Hello AWS
+2022-06-29 10:23:13 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Pickning Trip AWS Ksow kai IPHone Azure JAVA Kafka How AWS Love Trip amet Hello
+2022-06-29 10:23:23 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text School Hello Azure Programing Learninh self Microservice Pickning How Fell Laptop amet
+2022-06-29 10:23:33 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hello Judfjs Learninh self IPHone Fell Laptop Ksow kai Java amet Fell Laptop Pickning Judfjs Azure
+2022-06-29 10:23:43 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Fell Laptop Learninh self AWS Azure amet How How IPHone Spring Judfjs IPHone Ksow kai Judfjs How HP Laptop Ksow kai
+2022-06-29 10:23:53 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Azure IPHone Pickning Fell Laptop Spring Programing amet
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 16.0.2 on LAPTOP-BM6U357P with PID 29652 (F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo\twitter-to-kafka-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo)
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.004 seconds (JVM running for 1.511)
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservice, Spring, Kafka, Elasticsearch]
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Hello MicroService
+2022-06-29 15:37:45 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - Starting mock filtering twitter stream for keywords [Java, Microservice, Spring, Kafka, Elasticsearch]
+2022-06-29 15:37:45 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Trip Trip Pickning Learninh self IPHone IPHone Java Ksow kai Learninh self amet JAVA
+2022-06-29 15:37:55 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Pickning JAVA Love Pickning Fell Laptop JAVA Java Learninh self Judfjs How amet Love
+2022-06-29 15:38:05 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Trip School JAVA IPHone Love How amet Azure Microservice HP Laptop HP Laptop Programing amet Trip Ksow kai
+2022-06-29 15:38:15 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Azure How Pickning IPHone Elasticsearch Fell Laptop amet
+2022-06-29 15:38:25 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Programing Hello Love School Fell Laptop Fell Laptop AWS Judfjs Microservice JAVA How HP Laptop AWS JAVA HP Laptop Pickning
+2022-06-29 15:38:35 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Ksow kai HP Laptop Learninh self How amet How JAVA Kafka JAVA Judfjs Programing HP Laptop IPHone Fell Laptop
+2022-06-29 15:38:45 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Programing Hello Pickning Pickning Love Learninh self Microservice amet Learninh self amet Trip Trip
+2022-06-29 15:38:55 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hello Learninh self HP Laptop Fell Laptop Trip Microservice Programing IPHone Azure
+2022-06-29 15:39:05 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Judfjs Trip IPHone Ksow kai AWS Pickning Pickning JAVA Elasticsearch Ksow kai Judfjs amet HP Laptop amet Programing HP Laptop
+2022-06-29 15:39:15 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text JAVA Programing JAVA Programing Pickning Elasticsearch Love Azure Love Trip
+2022-06-29 15:39:25 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text School Fell Laptop JAVA Learninh self Fell Laptop Elasticsearch Fell Laptop JAVA Trip
+2022-06-29 15:39:35 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text IPHone Fell Laptop HP Laptop School Kafka amet Trip Learninh self
+2022-06-29 15:39:45 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Azure Hello IPHone School Hello Trip Kafka Trip HP Laptop Hello Azure AWS
+2022-06-29 15:39:55 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Fell Laptop Fell Laptop Hello Azure Learninh self HP Laptop Fell Laptop Kafka How Judfjs Programing School amet Love
+2022-06-29 15:40:05 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Ksow kai How Hello HP Laptop Java Pickning AWS Azure
+2022-06-29 15:40:15 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text How Pickning Love amet How Trip Java Azure Trip IPHone Pickning How
+2022-06-29 15:40:25 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text IPHone Trip Programing Azure Fell Laptop Azure amet Spring AWS Programing Programing Love Hello
+2022-06-29 15:40:35 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text IPHone Hello How HP Laptop Spring Pickning Learninh self
+2022-06-29 15:40:45 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Azure Hello Programing Hello HP Laptop Learninh self Ksow kai Azure Microservice Love School Ksow kai Azure Azure JAVA Azure
+2022-06-29 15:40:55 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text HP Laptop School AWS Learninh self Programing Spring Azure IPHone Hello Azure
+2022-06-29 15:41:05 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text School Hello Fell Laptop Pickning Love Microservice How amet Learninh self Pickning
+2022-06-29 15:41:15 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Trip Azure School JAVA School Ksow kai Fell Laptop AWS Java Trip Learninh self School JAVA How Learninh self
+2022-06-29 15:41:25 [pool-1-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hello Judfjs Fell Laptop Love How Spring Programing Programing Ksow kai Fell Laptop

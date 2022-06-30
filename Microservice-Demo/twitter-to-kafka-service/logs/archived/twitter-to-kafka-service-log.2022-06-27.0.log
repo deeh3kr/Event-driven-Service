@@ -1,0 +1,19 @@
+2022-06-27 22:25:44 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 16.0.2 on LAPTOP-BM6U357P with PID 10120 (F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo\twitter-to-kafka-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo)
+2022-06-27 22:25:44 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-27 22:25:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.271 seconds (JVM running for 1.885)
+2022-06-27 22:25:45 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-06-27 22:28:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 16.0.2 on LAPTOP-BM6U357P with PID 13324 (F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo\twitter-to-kafka-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo)
+2022-06-27 22:28:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-27 22:28:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.196 seconds (JVM running for 1.779)
+2022-06-27 22:28:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-06-27 22:28:58 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 16.0.2 on LAPTOP-BM6U357P with PID 43180 (F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo\twitter-to-kafka-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo)
+2022-06-27 22:28:58 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-27 22:28:59 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.271 seconds (JVM running for 1.889)
+2022-06-27 22:28:59 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-06-27 22:28:59 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [-Java -Microservice -Spring -Kafka -Elasticsearch]
+2022-06-27 22:31:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 16.0.2 on LAPTOP-BM6U357P with PID 24120 (F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo\twitter-to-kafka-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-Driven Architecure\Microservice-Demo)
+2022-06-27 22:31:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-27 22:31:03 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.244 seconds (JVM running for 1.818)
+2022-06-27 22:31:03 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-06-27 22:31:03 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [-Java -Microservice -Spring -Kafka -Elasticsearch]
+2022-06-27 22:31:03 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Hello MicroService

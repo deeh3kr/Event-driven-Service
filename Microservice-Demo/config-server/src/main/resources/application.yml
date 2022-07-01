@@ -12,7 +12,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/deeh3kr/cloud-config-server
+          #uri: file://F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server-repository\
+          uri: https://github.com/deeh3kr/event-driven-service-config
           default-label: master
+          username: deeh3kr
+          password: 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
           clone-on-start: true
     fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: springCloud_pwd!

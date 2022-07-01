@@ -38,6 +38,7 @@
 		<spring-boot-autoconfigure.version>2.7.1</spring-boot-autoconfigure.version>
 		<spring-cloud-starter-config.version>3.1.3</spring-cloud-starter-config.version>
 		<spring-boot-starter-security.version>2.7.1</spring-boot-starter-security.version>
+		<jsaypt-spring-boot-starter.version>3.0.4</jsaypt-spring-boot-starter.version>
 	</properties>
 
 	<repositories>
@@ -183,6 +184,13 @@
 				<artifactId>spring-boot-starter-security</artifactId>
 				<version>${spring-boot-starter-security.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter -->
+			<dependency>
+				<groupId>com.github.ulisesbocchio</groupId>
+				<artifactId>jasypt-spring-boot-starter</artifactId>
+				<version>${jasypt-spring-boot-starter.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

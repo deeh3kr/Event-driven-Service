@@ -1,0 +1,25 @@
+server:
+  port: 8888
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          #uri: file://F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server-repository\
+          uri: https://github.com/deeh3kr/event-driven-service-config
+          default-label: master
+          username: deeh3kr
+          password: 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
+          clone-on-start: true
+    fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: springCloud_pwd!

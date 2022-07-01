@@ -1,0 +1,18 @@
+server:
+  port: 8888
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/deeh3kr/cloud-config-server
+          default-label: master
+          clone-on-start: true
+    fail-fast: true

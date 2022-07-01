@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+docker-compose/docker-logs/**
+docker-compose/docker-logs/twitter-to-kafka-service.log
+

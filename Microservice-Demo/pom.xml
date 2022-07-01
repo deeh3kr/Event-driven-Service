@@ -7,7 +7,6 @@
         <module>app-config-data</module>
         <module>kafka</module>
 		<module>common-config</module>
-		<module>tempo</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

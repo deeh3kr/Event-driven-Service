@@ -11,7 +11,7 @@ public class TestJasypt {
         standardPBEStringEncryptor.setAlgorithm("PBEWITHHMACSHA512ANDAES_256");
         standardPBEStringEncryptor.setIvGenerator(new RandomIvGenerator());
 
-        String result = standardPBEStringEncryptor.encrypt("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");
+        String result = standardPBEStringEncryptor.encrypt("twitter_to_kafka");
         System.out.println(result);
         System.out.println(standardPBEStringEncryptor.decrypt(result));
 

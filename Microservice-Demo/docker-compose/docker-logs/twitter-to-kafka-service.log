@@ -1210,3 +1210,833 @@ Caused by: com.microservice.demo.kafka.admin.exception.KafkaClientException: Rea
 2022-07-01 07:01:14 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
 2022-07-01 07:01:14 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
 2022-07-01 07:01:14 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2022-07-03 15:08:06 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 17.0.3.1 on 5df5cc9b771a with PID 1 (/workspace/BOOT-INF/classes started by root in /workspace)
+2022-07-03 15:08:06 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2022-07-03 15:08:06 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2022-07-03 15:08:06 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2022-07-03 15:08:07 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c4efe6bf-a152-3133-a6e0-4bb220d7026e
+2022-07-03 15:08:07 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.microservice.demo.twitter.to.kafka.service.runner.StreamRunner' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-07-03 15:08:07 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-03 15:08:07 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.microservice.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication required a bean of type 'com.microservice.demo.twitter.to.kafka.service.runner.StreamRunner' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.microservice.demo.twitter.to.kafka.service.runner.StreamRunner' in your configuration.
+
+2022-07-03 16:23:51 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 17.0.3.1 on 4e221a30d1a6 with PID 438 (/workspace/BOOT-INF/classes started by root in /workspace)
+2022-07-03 16:23:52 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2022-07-03 16:23:52 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2022-07-03 16:23:52 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2022-07-03 16:23:53 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c6d9ff4a-36d4-34e5-8977-a530f84a41c4
+2022-07-03 16:23:54 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+2022-07-03 16:23:54 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-03 16:23:54 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 41 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 55 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 69 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 83 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerFactory(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig.kvKafkaTemplate(KafkaProducerConfig.java:50)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.CGLIB$kvKafkaTemplate$1(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994$$FastClassBySpringCGLIB$$92687cf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.kvKafkaTemplate(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 84 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 107 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerConfig(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig.producerFactory(KafkaProducerConfig.java:45)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.CGLIB$producerFactory$2(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994$$FastClassBySpringCGLIB$$92687cf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 108 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 131 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig.producerConfig(KafkaProducerConfig.java:34)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.CGLIB$producerConfig$0(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994$$FastClassBySpringCGLIB$$92687cf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerConfig(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 132 common frames omitted
+2022-07-03 16:34:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 17.0.3.1 on b6c5864f346a with PID 438 (/workspace/BOOT-INF/classes started by root in /workspace)
+2022-07-03 16:34:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2022-07-03 16:34:34 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2022-07-03 16:34:34 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2022-07-03 16:34:35 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c6d9ff4a-36d4-34e5-8977-a530f84a41c4
+2022-07-03 16:34:36 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+2022-07-03 16:34:36 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-03 16:34:36 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mockKafkaStreamRunner' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/runner/impl/MockKafkaStreamRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [/workspace/BOOT-INF/classes/com/microservice/demo/twitter/to/kafka/service/listener/TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 41 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducer' defined in URL [jar:file:/workspace/BOOT-INF/lib/kafka-producer-0.0.1-SNAPSHOT.jar!/com/microservice/demo/kafka/producer/service/impl/TwitterKafkaProducer.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 55 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kvKafkaTemplate' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 69 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kvKafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 83 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerFactory(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig.kvKafkaTemplate(KafkaProducerConfig.java:50)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.CGLIB$kvKafkaTemplate$2(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994$$FastClassBySpringCGLIB$$92687cf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.kvKafkaTemplate(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 84 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 107 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerConfig' defined in class path resource [com/microservice/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerConfig(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig.producerFactory(KafkaProducerConfig.java:45)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.CGLIB$producerFactory$0(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994$$FastClassBySpringCGLIB$$92687cf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerFactory(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 108 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.Map]: Factory method 'producerConfig' threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 131 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.microservice.demo.config.KafkaProducerConfigData.getBatchSize()" is null
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig.producerConfig(KafkaProducerConfig.java:34)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.CGLIB$producerConfig$1(<generated>)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994$$FastClassBySpringCGLIB$$92687cf0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.microservice.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$41cb2994.producerConfig(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 132 common frames omitted
+2022-07-03 16:50:33 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 17.0.3.1 on 276fd3c5c1b8 with PID 438 (/workspace/BOOT-INF/classes started by root in /workspace)
+2022-07-03 16:50:33 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2022-07-03 16:50:33 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2022-07-03 16:50:33 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=a2bc9323bb17120c6ac887831cf5917cede1a942, state=null
+2022-07-03 16:50:33 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2022-07-03 16:50:33 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2022-07-03 16:50:34 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c6d9ff4a-36d4-34e5-8977-a530f84a41c4
+2022-07-03 16:50:35 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-07-03 16:50:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2022-07-03 16:50:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2022-07-03 16:50:36 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1656867036131
+2022-07-03 16:50:36 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9f5e4c29-bb23-431f-a10f-59112841f9c6
+
+2022-07-03 16:50:38 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
+2022-07-03 16:50:38 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 7.241 seconds (JVM running for 7.997)
+2022-07-03 16:50:38 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-03 16:50:38 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.cloud.config.client.ConfigClientFailFastException: Could not locate PropertySource and the resource is not optional, failing
+	at org.springframework.cloud.config.client.ConfigServerConfigDataLoader.doLoad(ConfigServerConfigDataLoader.java:197)
+	at org.springframework.cloud.config.client.ConfigClientRetryBootstrapper.lambda$null$1(ConfigClientRetryBootstrapper.java:50)
+	at org.springframework.cloud.config.client.ConfigServerConfigDataLoader.load(ConfigServerConfigDataLoader.java:92)
+	at org.springframework.cloud.config.client.ConfigServerConfigDataLoader.load(ConfigServerConfigDataLoader.java:61)
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:107)
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:128)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:86)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:116)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processWithProfiles(ConfigDataEnvironment.java:311)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:232)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:102)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:94)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:102)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:87)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:65)
+Caused by: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/twitter-to-kafka-service,config-client/twitter_to_kafka": Connection refused; nested exception is java.net.ConnectException: Connection refused
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
+	at org.springframework.cloud.config.client.ConfigServerConfigDataLoader.getRemoteEnvironment(ConfigServerConfigDataLoader.java:303)
+	at org.springframework.cloud.config.client.ConfigServerConfigDataLoader.doLoad(ConfigServerConfigDataLoader.java:118)
+	... 36 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at java.base/sun.net.NetworkClient.doConnect(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.New(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.New(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 40 common frames omitted
+2022-07-03 16:50:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2022-07-03 16:50:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2022-07-03 16:50:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-07-03 16:50:38 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2022-07-03 16:50:38 [main] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Closing Kafka Producer
+2022-07-03 17:19:03 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 17.0.3.1 on 857c4cb2290a with PID 438 (/workspace/BOOT-INF/classes started by root in /workspace)
+2022-07-03 17:19:03 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "twitter_to_kafka"
+2022-07-03 17:19:03 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2022-07-03 17:19:03 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=a2bc9323bb17120c6ac887831cf5917cede1a942, state=null
+2022-07-03 17:19:03 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://config-server:8888
+2022-07-03 17:19:03 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter-to-kafka-service,config-client, profiles=[twitter_to_kafka], label=null, version=a2bc9323bb17120c6ac887831cf5917cede1a942, state=null
+2022-07-03 17:19:05 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c6d9ff4a-36d4-34e5-8977-a530f84a41c4
+2022-07-03 17:19:05 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-07-03 17:19:05 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2022-07-03 17:19:05 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2022-07-03 17:19:05 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1656868745861
+2022-07-03 17:19:06 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 413ba5f5-9a83-449d-9541-9022baa75ce3
+
+2022-07-03 17:19:07 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
+2022-07-03 17:19:07 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 7.4 seconds (JVM running for 8.05)
+2022-07-03 17:19:07 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts...
+2022-07-03 17:19:07 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topic(s), attempt 0
+2022-07-03 17:19:07 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-07-03 17:19:08 [main] INFO  c.m.d.t.t.k.s.i.i.KafkaStreamInitializer - Topic with Name twitter-topic is ready for operation!
+2022-07-03 17:19:08 [main] INFO  c.m.d.t.t.k.s.r.i.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [Java, Microservices, Kafka, Elasticsearch, Spring]
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text malesuada Fusce Maecenas posuere elit dolor Kafka porttitor sit Fusce ultricies sending to Kafka Topic twitter-topic
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2840885847252297562, "id": 8800966285198081008, "text": "malesuada Fusce Maecenas posuere elit dolor Kafka porttitor sit Fusce ultricies", "createdAt": 1656868748000} to topic: twitter-topic
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	bearer.auth.token = [hidden]
+	proxy.port = -1
+	schema.reflection = false
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	schema.registry.url = [http://schema-registry:8081]
+	basic.auth.user.info = [hidden]
+	proxy.host = 
+	use.latest.version = false
+	schema.registry.basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.1
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 97671528ba54a138
+2022-07-03 17:19:08 [pool-3-thread-1] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1656868748696
+2022-07-03 17:19:08 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: 2FzdvdsKQwekD-NtoZ0FUA
+2022-07-03 17:19:08 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-1] ProducerId set to 0 with epoch 0
+2022-07-03 17:19:19 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text purus posuere magna sed adipiscing consectetuer amet massa Microservices lectus congue magna elit magna posuere sending to Kafka Topic twitter-topic
+2022-07-03 17:19:19 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 617515927400249564, "id": 911837357226520225, "text": "purus posuere magna sed adipiscing consectetuer amet massa Microservices lectus congue magna elit magna posuere", "createdAt": 1656868759000} to topic: twitter-topic
+2022-07-03 17:19:29 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text purus amet sed Lorem congue posuere pulvinar massa Kafka porttitor ipsum dolor massa malesuada ultricies magna sending to Kafka Topic twitter-topic
+2022-07-03 17:19:29 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 3327953225691563066, "id": 2264219942006405258, "text": "purus amet sed Lorem congue posuere pulvinar massa Kafka porttitor ipsum dolor massa malesuada ultricies magna", "createdAt": 1656868769000} to topic: twitter-topic
+2022-07-03 17:19:39 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text libero Fusce porttitor adipiscing malesuada Java sed massa magna sending to Kafka Topic twitter-topic
+2022-07-03 17:19:39 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 4320428213572383100, "id": 6720728899547247169, "text": "libero Fusce porttitor adipiscing malesuada Java sed massa magna", "createdAt": 1656868779000} to topic: twitter-topic
+2022-07-03 17:19:49 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text porttitor malesuada massa adipiscing elit pulvinar sit Kafka Fusce sed adipiscing Maecenas lectus sending to Kafka Topic twitter-topic
+2022-07-03 17:19:49 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 1717179925472157902, "id": 5976986789126298671, "text": "porttitor malesuada massa adipiscing elit pulvinar sit Kafka Fusce sed adipiscing Maecenas lectus", "createdAt": 1656868789000} to topic: twitter-topic
+2022-07-03 17:19:59 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text sit posuere malesuada porttitor consectetuer posuere Microservices porttitor sed purus porttitor sending to Kafka Topic twitter-topic
+2022-07-03 17:19:59 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 6725263701799956053, "id": 9085983244078760310, "text": "sit posuere malesuada porttitor consectetuer posuere Microservices porttitor sed purus porttitor", "createdAt": 1656868799000} to topic: twitter-topic
+2022-07-03 17:20:09 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text elit porttitor sit Java dolor pulvinar sending to Kafka Topic twitter-topic
+2022-07-03 17:20:09 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 1530327538782190004, "id": 4956726658063715488, "text": "elit porttitor sit Java dolor pulvinar", "createdAt": 1656868809000} to topic: twitter-topic
+2022-07-03 17:20:19 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text dolor amet ipsum adipiscing posuere posuere Lorem congue Spring sed consectetuer Lorem adipiscing massa amet sending to Kafka Topic twitter-topic
+2022-07-03 17:20:19 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2555552527915124042, "id": 5684226105049404810, "text": "dolor amet ipsum adipiscing posuere posuere Lorem congue Spring sed consectetuer Lorem adipiscing massa amet", "createdAt": 1656868819000} to topic: twitter-topic
+2022-07-03 17:20:29 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text adipiscing ultricies posuere porttitor Microservices malesuada Lorem sending to Kafka Topic twitter-topic
+2022-07-03 17:20:29 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 1203856013262658983, "id": 8685673485607240435, "text": "adipiscing ultricies posuere porttitor Microservices malesuada Lorem", "createdAt": 1656868829000} to topic: twitter-topic
+2022-07-03 17:20:39 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text pulvinar amet magna malesuada Fusce dolor Kafka pulvinar consectetuer sit porttitor lectus sending to Kafka Topic twitter-topic
+2022-07-03 17:20:39 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 7911086016778359507, "id": 1821383179593222718, "text": "pulvinar amet magna malesuada Fusce dolor Kafka pulvinar consectetuer sit porttitor lectus", "createdAt": 1656868839000} to topic: twitter-topic
+2022-07-03 17:20:49 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text porttitor congue Lorem ultricies Spring amet consectetuer Maecenas sending to Kafka Topic twitter-topic
+2022-07-03 17:20:49 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 6477507116210743211, "id": 7013899867038409932, "text": "porttitor congue Lorem ultricies Spring amet consectetuer Maecenas", "createdAt": 1656868849000} to topic: twitter-topic
+2022-07-03 17:20:59 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text Lorem amet Lorem Java libero lectus sending to Kafka Topic twitter-topic
+2022-07-03 17:20:59 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 283318483951585510, "id": 1806165388460943113, "text": "Lorem amet Lorem Java libero lectus", "createdAt": 1656868859000} to topic: twitter-topic
+2022-07-03 17:21:09 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text posuere amet libero lectus elit Microservices Lorem malesuada Lorem porttitor sending to Kafka Topic twitter-topic
+2022-07-03 17:21:09 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 7122429216929804170, "id": 4049111192648883987, "text": "posuere amet libero lectus elit Microservices Lorem malesuada Lorem porttitor", "createdAt": 1656868869000} to topic: twitter-topic
+2022-07-03 17:21:19 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text massa amet ultricies ipsum massa adipiscing Lorem Java adipiscing lectus magna lectus dolor sending to Kafka Topic twitter-topic
+2022-07-03 17:21:19 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 9119779692339292777, "id": 5504968277474393271, "text": "massa amet ultricies ipsum massa adipiscing Lorem Java adipiscing lectus magna lectus dolor", "createdAt": 1656868879000} to topic: twitter-topic
+2022-07-03 17:21:29 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text pulvinar congue sed amet sit Kafka consectetuer sed Fusce sending to Kafka Topic twitter-topic
+2022-07-03 17:21:29 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2464344669150518393, "id": 2003465113996012467, "text": "pulvinar congue sed amet sit Kafka consectetuer sed Fusce", "createdAt": 1656868889000} to topic: twitter-topic
+2022-07-03 17:21:39 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text dolor dolor congue elit Java libero ipsum sending to Kafka Topic twitter-topic
+2022-07-03 17:21:39 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 4584384367725411489, "id": 4301977858386685095, "text": "dolor dolor congue elit Java libero ipsum", "createdAt": 1656868899000} to topic: twitter-topic
+2022-07-03 17:21:49 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text adipiscing elit amet magna porttitor malesuada posuere consectetuer Kafka sit Maecenas ultricies ultricies porttitor ultricies libero sending to Kafka Topic twitter-topic
+2022-07-03 17:21:49 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 269988295317584596, "id": 4245078460232836750, "text": "adipiscing elit amet magna porttitor malesuada posuere consectetuer Kafka sit Maecenas ultricies ultricies porttitor ultricies libero", "createdAt": 1656868909000} to topic: twitter-topic
+2022-07-03 17:21:59 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text pulvinar dolor sit adipiscing ultricies adipiscing ultricies amet Java amet sed ipsum amet adipiscing purus libero sending to Kafka Topic twitter-topic
+2022-07-03 17:21:59 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 6540241637456145132, "id": 8398071812665804539, "text": "pulvinar dolor sit adipiscing ultricies adipiscing ultricies amet Java amet sed ipsum amet adipiscing purus libero", "createdAt": 1656868919000} to topic: twitter-topic
+2022-07-03 17:22:09 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text sit elit ultricies dolor Java pulvinar amet sending to Kafka Topic twitter-topic
+2022-07-03 17:22:09 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2974111208266894203, "id": 3852266374305408632, "text": "sit elit ultricies dolor Java pulvinar amet", "createdAt": 1656868929000} to topic: twitter-topic
+2022-07-03 17:22:19 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text magna elit congue posuere Microservices posuere sed elit sending to Kafka Topic twitter-topic
+2022-07-03 17:22:19 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 3279706552030623778, "id": 8125126213032142723, "text": "magna elit congue posuere Microservices posuere sed elit", "createdAt": 1656868939000} to topic: twitter-topic
+2022-07-03 17:22:29 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text sit magna elit congue amet porttitor malesuada Java dolor ipsum purus Fusce pulvinar sending to Kafka Topic twitter-topic
+2022-07-03 17:22:29 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 9080282849818540855, "id": 1819712933014757335, "text": "sit magna elit congue amet porttitor malesuada Java dolor ipsum purus Fusce pulvinar", "createdAt": 1656868949000} to topic: twitter-topic
+2022-07-03 17:22:39 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text posuere malesuada elit posuere sed ultricies lectus Kafka posuere posuere elit malesuada Maecenas Maecenas sending to Kafka Topic twitter-topic
+2022-07-03 17:22:39 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 5099323282529152678, "id": 1313259867949625668, "text": "posuere malesuada elit posuere sed ultricies lectus Kafka posuere posuere elit malesuada Maecenas Maecenas", "createdAt": 1656868959000} to topic: twitter-topic
+2022-07-03 17:22:49 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text congue Fusce congue ipsum Kafka porttitor ipsum sending to Kafka Topic twitter-topic
+2022-07-03 17:22:49 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 861233041638892078, "id": 4622217132225446263, "text": "congue Fusce congue ipsum Kafka porttitor ipsum", "createdAt": 1656868969000} to topic: twitter-topic
+2022-07-03 17:22:59 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text magna dolor purus Maecenas purus posuere Fusce Spring lectus Lorem adipiscing magna Lorem adipiscing sending to Kafka Topic twitter-topic
+2022-07-03 17:22:59 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2089249406989564478, "id": 300717040400705453, "text": "magna dolor purus Maecenas purus posuere Fusce Spring lectus Lorem adipiscing magna Lorem adipiscing", "createdAt": 1656868979000} to topic: twitter-topic
+2022-07-03 17:23:09 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text magna posuere magna dolor sed libero Spring libero porttitor magna magna consectetuer sending to Kafka Topic twitter-topic
+2022-07-03 17:23:09 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2126669584863012709, "id": 6145250863451182855, "text": "magna posuere magna dolor sed libero Spring libero porttitor magna magna consectetuer", "createdAt": 1656868989000} to topic: twitter-topic
+2022-07-03 17:23:19 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text Fusce malesuada lectus Spring malesuada ultricies sending to Kafka Topic twitter-topic
+2022-07-03 17:23:19 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 7958706288277499660, "id": 7071901636645557142, "text": "Fusce malesuada lectus Spring malesuada ultricies", "createdAt": 1656868999000} to topic: twitter-topic
+2022-07-03 17:23:29 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text posuere pulvinar dolor purus sit Kafka malesuada Lorem Lorem sending to Kafka Topic twitter-topic
+2022-07-03 17:23:29 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2945119811020502050, "id": 6004352025654191145, "text": "posuere pulvinar dolor purus sit Kafka malesuada Lorem Lorem", "createdAt": 1656869009000} to topic: twitter-topic
+2022-07-03 17:23:39 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text ipsum porttitor libero consectetuer magna Lorem dolor Microservices congue congue porttitor sed sed sending to Kafka Topic twitter-topic
+2022-07-03 17:23:39 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 675926688898623316, "id": 2046230755346234470, "text": "ipsum porttitor libero consectetuer magna Lorem dolor Microservices congue congue porttitor sed sed", "createdAt": 1656869019000} to topic: twitter-topic
+2022-07-03 17:23:49 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text elit consectetuer lectus amet ultricies posuere Elasticsearch porttitor ultricies amet sit sending to Kafka Topic twitter-topic
+2022-07-03 17:23:49 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 5901270952250694960, "id": 8471952016311361725, "text": "elit consectetuer lectus amet ultricies posuere Elasticsearch porttitor ultricies amet sit", "createdAt": 1656869029000} to topic: twitter-topic
+2022-07-03 17:23:59 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text ultricies purus libero Maecenas Kafka pulvinar magna adipiscing sending to Kafka Topic twitter-topic
+2022-07-03 17:23:59 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 3495860327260373760, "id": 417582513482956907, "text": "ultricies purus libero Maecenas Kafka pulvinar magna adipiscing", "createdAt": 1656869039000} to topic: twitter-topic
+2022-07-03 17:24:06 [kafka-admin-client-thread | adminclient-1] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node -2 disconnected.
+2022-07-03 17:24:09 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text consectetuer pulvinar adipiscing libero massa adipiscing sed purus Microservices malesuada Maecenas Maecenas malesuada ipsum Maecenas sending to Kafka Topic twitter-topic
+2022-07-03 17:24:09 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2753900815866417397, "id": 4652858298820800925, "text": "consectetuer pulvinar adipiscing libero massa adipiscing sed purus Microservices malesuada Maecenas Maecenas malesuada ipsum Maecenas", "createdAt": 1656869049000} to topic: twitter-topic
+2022-07-03 17:24:19 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text massa sit adipiscing dolor massa elit congue Elasticsearch Lorem Lorem magna elit Lorem sending to Kafka Topic twitter-topic
+2022-07-03 17:24:19 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2266531742836579647, "id": 7832233061487554786, "text": "massa sit adipiscing dolor massa elit congue Elasticsearch Lorem Lorem magna elit Lorem", "createdAt": 1656869059000} to topic: twitter-topic
+2022-07-03 17:24:29 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text sed sed lectus dolor ultricies libero Microservices massa amet dolor Maecenas sending to Kafka Topic twitter-topic
+2022-07-03 17:24:29 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 2448992504136062468, "id": 699912852017886204, "text": "sed sed lectus dolor ultricies libero Microservices massa amet dolor Maecenas", "createdAt": 1656869069000} to topic: twitter-topic
+2022-07-03 17:24:39 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text libero pulvinar pulvinar Elasticsearch elit pulvinar sending to Kafka Topic twitter-topic
+2022-07-03 17:24:39 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 3603173913377116417, "id": 5543309364897838988, "text": "libero pulvinar pulvinar Elasticsearch elit pulvinar", "createdAt": 1656869079000} to topic: twitter-topic
+2022-07-03 17:24:49 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text posuere consectetuer consectetuer consectetuer ipsum Elasticsearch congue dolor lectus elit sending to Kafka Topic twitter-topic
+2022-07-03 17:24:49 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 7866509131419640110, "id": 4660765664557589980, "text": "posuere consectetuer consectetuer consectetuer ipsum Elasticsearch congue dolor lectus elit", "createdAt": 1656869089000} to topic: twitter-topic
+2022-07-03 17:24:58 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node -1 disconnected.
+2022-07-03 17:24:58 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 1 disconnected.
+2022-07-03 17:24:58 [kafka-admin-client-thread | adminclient-1] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Node 1 disconnected.
+2022-07-03 17:24:59 [pool-3-thread-1] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received Status text malesuada amet amet sed malesuada Spring libero pulvinar libero adipiscing sending to Kafka Topic twitter-topic
+2022-07-03 17:24:59 [pool-3-thread-1] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending Message {"userId": 4539925610683087538, "id": 2244608442775754411, "text": "malesuada amet amet sed malesuada Spring libero pulvinar libero adipiscing", "createdAt": 1656869099000} to topic: twitter-topic
+2022-07-03 17:25:03 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node -2 disconnected.
+2022-07-03 17:25:03 [kafka-producer-network-thread | producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Node 2 disconnected.

@@ -41,6 +41,8 @@
 		<spring-boot-starter-security.version>2.7.1</spring-boot-starter-security.version>
 		<jsaypt-spring-boot-starter.version>3.0.4</jsaypt-spring-boot-starter.version>
 		<jasypt-spring-boot-starter.version>3.0.3</jasypt-spring-boot-starter.version>
+		<jsaypt-spring-boot-starter.version>3.0.4</jsaypt-spring-boot-starter.version>
+
 	</properties>
 
 	<repositories>
@@ -160,6 +162,7 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
+<<<<<<< HEAD
 			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -191,12 +194,19 @@
 				<artifactId>spring-boot-starter-security</artifactId>
 				<version>${spring-boot-starter-security.version}</version>
 			</dependency>
+=======
+>>>>>>> 4a1bff16f8e467ce4b4f3d777e8dfde5fa91577f
 			<!-- https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter -->
 			<dependency>
 				<groupId>com.github.ulisesbocchio</groupId>
 				<artifactId>jasypt-spring-boot-starter</artifactId>
 				<version>${jasypt-spring-boot-starter.version}</version>
 			</dependency>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4a1bff16f8e467ce4b4f3d777e8dfde5fa91577f
 
 		</dependencies>
 	</dependencyManagement>

@@ -16,10 +16,12 @@ spring:
           uri: https://github.com/deeh3kr/event-driven-service-config
           default-label: master
           username: deeh3kr
-          password: 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
+          password: '{cipher}952edf1e97c608630d0f0d99b48c34b69bcac149e22942e58a5801f1118eba0d18953f4262bd2af01a33a98617786a8954a94f419d14bd89cec6763bcb3304ba'
           clone-on-start: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: springCloud_pwd!
+      password: '{cipher}5bf649daf27fd62cb054be63981d5e773a746808feb0277600a4685f898bf101ec0e39529bc199969aca1ac351b239ea'
+#encrypt:
+#  key: 'password!!'

@@ -12,17 +12,8 @@ spring:
       uri:
         - http://localhost:8888
       username: spring_cloud_user
-      password: '{cipher}08fd8390dceb5cc153dae5c531ee35d761145ca16577675e0b64e8fb638c86a8f30628061f0a11e70b2133947ee6f529'
+      password: '{cipher}ce593ba2773755d9c9981a16e1e961f5beef5bf96160cd8be74576f8e32576a6e17cf6019e1551494487eeb8454b82f9'
 
-#For JCE
-encrypt:
-  key: 'password!!'
-
-#spring:
-#  cloud:
-#    config:
-#      uri:
-#        - http://localhost:8888
 
 
 

@@ -12,13 +12,8 @@ spring:
       uri:
         - http://localhost:8888
       username: spring_cloud_user
-      password: springCloud_pwd!
+      password: '{cipher}ce593ba2773755d9c9981a16e1e961f5beef5bf96160cd8be74576f8e32576a6e17cf6019e1551494487eeb8454b82f9'
 
-#spring:
-#  cloud:
-#    config:
-#      uri:
-#        - http://localhost:8888
 
 
 

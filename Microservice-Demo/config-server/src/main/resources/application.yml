@@ -16,10 +16,16 @@ spring:
           uri: https://github.com/deeh3kr/event-driven-service-config
           default-label: master
           username: deeh3kr
-          password: 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
+          password: ENC(pnxwcFIcFykqaXS8VbSLRsM9GR7DRVlfVPlfcZWVr14I99rh5Rjv4ODk8ohAsVfEsaxjhz7UL7ekA1+ecbYgGApJmwMt1qQ53AmFO1tWT5Q=)
           clone-on-start: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: springCloud_pwd!
+      password: ENC(szIEI5hqs1jeINFFpaaPzJ8wDUF5+hiVzuW6i56nzAkVqQ2L+SOMgsr+tCR/b0Fk)
+
+jasypt:
+  encryptor:
+    password: password!!
+#    algorithm: PBEWithMD5AndTripleDES
+#    iv-generator-classname: org.jasypt.iv.NoIvGenerator

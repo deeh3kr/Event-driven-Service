@@ -12,7 +12,11 @@ spring:
       uri:
         - http://localhost:8888
       username: spring_cloud_user
-      password: springCloud_pwd!
+      password: ENC(szIEI5hqs1jeINFFpaaPzJ8wDUF5+hiVzuW6i56nzAkVqQ2L+SOMgsr+tCR/b0Fk)
+
+jasypt:
+  encryptor:
+    password: password!!
 
 #spring:
 #  cloud:

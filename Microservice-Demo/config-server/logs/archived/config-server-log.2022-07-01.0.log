@@ -1,0 +1,1069 @@
+2022-07-01 14:13:41 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 14:13:42 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+2022-07-01 14:13:42 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 14:13:42 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 41 common frames omitted
+2022-07-01 14:13:42 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 41 common frames omitted
+2022-07-01 14:19:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 14:19:05 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+2022-07-01 14:19:05 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 14:19:05 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 41 common frames omitted
+2022-07-01 14:19:05 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 41 common frames omitted
+2022-07-01 14:27:16 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 1648 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 14:27:16 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 14:27:16 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 14:27:19 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 14:27:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 14:27:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 14:27:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 14:27:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 14:27:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 14:27:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4290 ms
+2022-07-01 14:27:22 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 14:27:22 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 14:27:22 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 14:27:22 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:30:49 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:30:49 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 7368 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:30:49 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:30:51 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:30:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:30:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:30:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:30:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:30:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:30:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2556 ms
+2022-07-01 15:30:53 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:30:54 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:30:54 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:30:54 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:33:39 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:33:39 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 5216 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:33:39 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:33:40 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:33:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:33:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:33:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:33:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:33:41 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:33:41 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2463 ms
+2022-07-01 15:33:42 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:33:42 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:33:42 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:33:42 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:35:18 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:35:18 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 27284 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:35:18 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:35:20 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:35:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:35:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:35:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:35:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:35:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:35:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2893 ms
+2022-07-01 15:35:23 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:35:23 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:35:23 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:35:23 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:37:58 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:37:58 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 32408 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:37:58 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:38:00 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:38:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:38:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:38:01 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:38:01 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:38:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:38:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2484 ms
+2022-07-01 15:38:02 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:38:02 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:38:02 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:38:02 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:40:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:40:35 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 21652 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:40:35 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:40:36 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:40:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:40:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:40:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:40:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:40:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:40:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2799 ms
+2022-07-01 15:40:39 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:40:39 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:40:39 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:40:39 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:42:21 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:42:21 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 27784 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:42:21 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:42:23 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:42:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:42:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:42:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:42:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:42:24 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:42:24 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2867 ms
+2022-07-01 15:42:25 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:42:25 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:42:25 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:42:25 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:44:16 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:44:16 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 37516 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:44:16 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:44:19 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:44:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:44:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:44:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:44:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:44:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:44:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3698 ms
+2022-07-01 15:44:21 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultEnvironmentRepository' defined in class path resource [org/springframework/cloud/config/server/config/DefaultRepositoryConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: You need to configure a uri for the git repository.
+2022-07-01 15:44:21 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:44:21 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:44:21 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Invalid config server configuration.
+
+Action:
+
+If you are using the git profile, you need to set a Git URI in your configuration.  If you have set spring.cloud.config.server.bootstrap=true, you need to use a composite configuration.
+
+2022-07-01 15:46:37 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:46:37 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 27024 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:46:37 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:46:39 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:46:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:46:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:46:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:46:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:46:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:46:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2924 ms
+2022-07-01 15:46:42 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception; nested exception is org.springframework.cloud.configuration.CompatibilityNotMetException: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@7dee835 description = 'Spring Boot [2.7.1] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [2.6.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2022-07-01 15:46:42 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:46:42 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:46:42 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [2.7.1] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [2.6.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
+2022-07-01 15:48:54 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 34596 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:48:54 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-07-01 15:48:54 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to default profiles: default
+2022-07-01 15:48:54 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.NoClassDefFoundError: org/springframework/boot/context/annotation/ImportCandidates
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getCandidateConfigurations(AutoConfigurationImportSelector.java:184)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:125)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector$AutoConfigurationGroup.process(AutoConfigurationImportSelector.java:440)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGrouping.getImports(ConfigurationClassParser.java:879)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:809)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:780)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:193)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.annotation.ImportCandidates
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 20 common frames omitted
+2022-07-01 15:50:08 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-07-01 15:50:08 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 20048 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:50:08 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to default profiles: default
+2022-07-01 15:50:08 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.NoClassDefFoundError: org/springframework/boot/context/annotation/ImportCandidates
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getCandidateConfigurations(AutoConfigurationImportSelector.java:184)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:125)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector$AutoConfigurationGroup.process(AutoConfigurationImportSelector.java:440)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGrouping.getImports(ConfigurationClassParser.java:879)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:809)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:780)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:193)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.annotation.ImportCandidates
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 20 common frames omitted
+2022-07-01 15:51:58 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-07-01 15:51:58 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 36064 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:51:58 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to default profiles: default
+2022-07-01 15:51:58 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.NoClassDefFoundError: org/springframework/boot/context/annotation/ImportCandidates
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getCandidateConfigurations(AutoConfigurationImportSelector.java:184)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:125)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector$AutoConfigurationGroup.process(AutoConfigurationImportSelector.java:440)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGrouping.getImports(ConfigurationClassParser.java:879)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:809)
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:780)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:193)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.annotation.ImportCandidates
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 20 common frames omitted
+2022-07-01 15:55:01 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:55:01 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 25176 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:55:01 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:55:02 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:55:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:55:02 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:55:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:55:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:55:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:55:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1528 ms
+2022-07-01 15:55:04 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception; nested exception is org.springframework.cloud.configuration.CompatibilityNotMetException: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@39b626e5 description = 'Spring Boot [2.7.1] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [2.6.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2022-07-01 15:55:04 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:55:04 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:55:04 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [2.7.1] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [2.6.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
+2022-07-01 15:56:25 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 15:56:25 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 37060 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 15:56:25 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 15:56:26 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 15:56:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 15:56:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 15:56:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 15:56:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 15:56:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 15:56:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1649 ms
+2022-07-01 15:56:28 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'compositeCompatibilityVerifier' defined in class path resource [org/springframework/cloud/configuration/CompatibilityVerifierAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.configuration.CompositeCompatibilityVerifier]: Factory method 'compositeCompatibilityVerifier' threw exception; nested exception is org.springframework.cloud.configuration.CompatibilityNotMetException: Spring Cloud/ Spring Boot version compatibility checks have failed: [[VerificationResult@2f79f192 description = 'Spring Boot [2.7.1] is not compatible with this Spring Cloud release train', action = 'Change Spring Boot version to one of the following versions [2.6.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]']]
+2022-07-01 15:56:28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2022-07-01 15:56:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-01 15:56:28 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Your project setup is incompatible with our requirements due to following reasons:
+
+- Spring Boot [2.7.1] is not compatible with this Spring Cloud release train
+
+
+Action:
+
+Consider applying the following actions:
+
+- Change Spring Boot version to one of the following versions [2.6.x] .
+You can find the latest Spring Boot versions here [https://spring.io/projects/spring-boot#learn]. 
+If you want to learn more about the Spring Cloud Release train compatibility, you can visit this page [https://spring.io/projects/spring-cloud#overview] and check the [Release Trains] section.
+If you want to disable this check, just set the property [spring.cloud.compatibility-verifier.enabled=false]
+
+
+2022-07-01 16:06:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 16:06:45 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 37728 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 16:06:45 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 16:06:46 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 16:06:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 16:06:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:06:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 16:06:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 16:06:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 16:06:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1531 ms
+2022-07-01 16:06:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:06:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 16:06:47 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.536 seconds (JVM running for 4.168)
+2022-07-01 16:07:37 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 16:07:37 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 18032 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 16:07:37 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 16:07:38 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 16:07:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 16:07:38 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:07:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 16:07:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 16:07:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 16:07:39 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1482 ms
+2022-07-01 16:07:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:07:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 16:07:40 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.39 seconds (JVM running for 4.044)
+2022-07-01 16:10:05 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 16680 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 16:10:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 16:10:05 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 16:10:06 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 16:10:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 16:10:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:10:07 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 16:10:07 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 16:10:07 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 16:10:07 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1530 ms
+2022-07-01 16:10:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:10:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 16:10:08 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.444 seconds (JVM running for 4.074)
+2022-07-01 16:11:10 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 27996 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 16:11:10 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 16:11:10 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 16:11:11 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 16:11:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 16:11:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:11:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 16:11:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 16:11:12 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 16:11:12 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1432 ms
+2022-07-01 16:11:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:11:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 16:11:13 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.455 seconds (JVM running for 4.056)
+2022-07-01 16:13:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 16:13:45 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 31428 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 16:13:45 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 16:13:46 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 16:13:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 16:13:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:13:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 16:13:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 16:13:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 16:13:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1588 ms
+2022-07-01 16:13:57 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not checkout default label main
+org.eclipse.jgit.api.errors.RefNotFoundException: Ref main cannot be resolved
+	at org.eclipse.jgit.api.CheckoutCommand.call(CheckoutCommand.java:223)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkout(JGitEnvironmentRepository.java:468)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkoutDefaultBranchWithRetry(JGitEnvironmentRepository.java:393)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:380)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:284)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+2022-07-01 16:13:57 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Will try to checkout master label instead.
+2022-07-01 16:13:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:13:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 16:13:57 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 12.998 seconds (JVM running for 13.561)
+2022-07-01 16:14:19 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-13099785086374003711\.git\objects\pack\pack-40da42ddbcd25c72fa6d873edae449a593da38a4.idx
+2022-07-01 16:14:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 16:14:22 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 36496 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 16:14:22 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 16:14:23 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 16:14:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 16:14:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:14:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 16:14:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 16:14:24 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 16:14:24 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1581 ms
+2022-07-01 16:14:26 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not checkout default label main
+org.eclipse.jgit.api.errors.RefNotFoundException: Ref main cannot be resolved
+	at org.eclipse.jgit.api.CheckoutCommand.call(CheckoutCommand.java:223)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkout(JGitEnvironmentRepository.java:468)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkoutDefaultBranchWithRetry(JGitEnvironmentRepository.java:393)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:380)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:284)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+2022-07-01 16:14:26 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Will try to checkout master label instead.
+2022-07-01 16:14:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 16:14:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 16:14:27 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 5.456 seconds (JVM running for 6.009)
+2022-07-01 20:23:43 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-6917267979316983389\.git\objects\pack\pack-40da42ddbcd25c72fa6d873edae449a593da38a4.idx
+2022-07-01 20:23:47 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 39568 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 20:23:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 20:23:47 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 20:23:49 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 20:23:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 20:23:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:23:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 20:23:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 20:23:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 20:23:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1547 ms
+2022-07-01 20:23:53 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not checkout default label main
+org.eclipse.jgit.api.errors.RefNotFoundException: Ref main cannot be resolved
+	at org.eclipse.jgit.api.CheckoutCommand.call(CheckoutCommand.java:223)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkout(JGitEnvironmentRepository.java:468)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkoutDefaultBranchWithRetry(JGitEnvironmentRepository.java:393)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:380)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:284)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+2022-07-01 20:23:53 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Will try to checkout master label instead.
+2022-07-01 20:23:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:23:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 20:23:53 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 6.234 seconds (JVM running for 6.843)
+2022-07-01 20:24:59 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-2251539009202062109\.git\objects\pack\pack-40da42ddbcd25c72fa6d873edae449a593da38a4.idx
+2022-07-01 20:25:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 20:25:02 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 21968 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 20:25:02 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 20:25:03 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 20:25:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 20:25:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:25:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 20:25:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 20:25:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 20:25:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1583 ms
+2022-07-01 20:25:07 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not checkout default label main
+org.eclipse.jgit.api.errors.RefNotFoundException: Ref main cannot be resolved
+	at org.eclipse.jgit.api.CheckoutCommand.call(CheckoutCommand.java:223)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkout(JGitEnvironmentRepository.java:468)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkoutDefaultBranchWithRetry(JGitEnvironmentRepository.java:393)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:380)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:284)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+2022-07-01 20:25:07 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Will try to checkout master label instead.
+2022-07-01 20:25:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:25:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 20:25:07 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 5.921 seconds (JVM running for 6.512)
+2022-07-01 20:26:09 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-15635760708180551258\.git\objects\pack\pack-40da42ddbcd25c72fa6d873edae449a593da38a4.idx
+2022-07-01 20:26:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 20:26:12 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 17148 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 20:26:12 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 20:26:13 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 20:26:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 20:26:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:26:14 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 20:26:14 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 20:26:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 20:26:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1514 ms
+2022-07-01 20:26:18 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not checkout default label main
+org.eclipse.jgit.api.errors.RefNotFoundException: Ref main cannot be resolved
+	at org.eclipse.jgit.api.CheckoutCommand.call(CheckoutCommand.java:223)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkout(JGitEnvironmentRepository.java:468)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkoutDefaultBranchWithRetry(JGitEnvironmentRepository.java:393)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.initClonedRepository(JGitEnvironmentRepository.java:380)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.afterPropertiesSet(JGitEnvironmentRepository.java:284)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.afterPropertiesSet(MultipleJGitEnvironmentRepository.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.microservice.demo.config.server.ConfigServerApplication.main(ConfigServerApplication.java:11)
+2022-07-01 20:26:18 [main] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Will try to checkout master label instead.
+2022-07-01 20:26:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:26:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 20:26:19 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 6.843 seconds (JVM running for 7.479)
+2022-07-01 20:26:33 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-14705167530649464920\.git\objects\pack\pack-40da42ddbcd25c72fa6d873edae449a593da38a4.idx
+2022-07-01 20:26:36 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 14736 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 20:26:36 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 20:26:36 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 20:26:37 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 20:26:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 20:26:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:26:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 20:26:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 20:26:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 20:26:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1423 ms
+2022-07-01 20:26:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 20:26:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 20:26:41 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 6.104 seconds (JVM running for 6.659)
+2022-07-01 20:48:36 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-01 20:48:36 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-07-01 20:48:36 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-07-01 20:48:37 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\deepa\AppData\Local\Temp\config-repo-5451940475149285120\application.yml]' via location 'file:/C:/Users/deepa/AppData/Local/Temp/config-repo-5451940475149285120/'
+2022-07-01 21:07:23 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-5451940475149285120\.git\objects\pack\pack-40da42ddbcd25c72fa6d873edae449a593da38a4.idx
+2022-07-01 21:07:27 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 21:07:27 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 35992 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 21:07:27 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 21:07:28 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 21:07:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 21:07:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 21:07:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 21:07:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 21:07:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 21:07:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1510 ms
+2022-07-01 21:07:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 21:07:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 21:07:30 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.419 seconds (JVM running for 4.033)
+2022-07-01 21:08:39 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-01 21:08:39 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-07-01 21:08:39 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-07-01 21:08:42 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Cannot pull from remote null, the working tree is not clean.
+2022-07-01 21:08:42 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not refresh default label main
+org.springframework.cloud.config.server.environment.NoSuchLabelException: No such label: main
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.refresh(JGitEnvironmentRepository.java:314)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.getLocations(JGitEnvironmentRepository.java:262)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.getLocations(MultipleJGitEnvironmentRepository.java:139)
+	at org.springframework.cloud.config.server.environment.AbstractScmEnvironmentRepository.findOne(AbstractScmEnvironmentRepository.java:55)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.findOneFromCandidate(MultipleJGitEnvironmentRepository.java:188)
+	at org.springframework.cloud.config.server.environment.MultipleJGitEnvironmentRepository.findOne(MultipleJGitEnvironmentRepository.java:173)
+	at org.springframework.cloud.config.server.environment.CompositeEnvironmentRepository.findOne(CompositeEnvironmentRepository.java:64)
+	at org.springframework.cloud.config.server.environment.EnvironmentEncryptorEnvironmentRepository.findOne(EnvironmentEncryptorEnvironmentRepository.java:61)
+	at org.springframework.cloud.config.server.environment.EnvironmentController.getEnvironment(EnvironmentController.java:134)
+	at org.springframework.cloud.config.server.environment.EnvironmentController.defaultLabelIncludeOrigin(EnvironmentController.java:116)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:485)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at org.springframework.cloud.config.server.environment.EnvironmentController$$EnhancerBySpringCGLIB$$b0323fd8.defaultLabelIncludeOrigin(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jgit.api.errors.RefNotFoundException: Ref main cannot be resolved
+	at org.eclipse.jgit.api.CheckoutCommand.call(CheckoutCommand.java:223)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.checkout(JGitEnvironmentRepository.java:468)
+	at org.springframework.cloud.config.server.environment.JGitEnvironmentRepository.refresh(JGitEnvironmentRepository.java:307)
+	... 69 common frames omitted
+2022-07-01 21:08:42 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Will try to checkout master label instead.
+2022-07-01 21:08:42 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Cannot pull from remote null, the working tree is not clean.
+2022-07-01 21:08:43 [http-nio-8888-exec-1] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not merge remote for master remote: null
+2022-07-01 21:08:43 [http-nio-8888-exec-1] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - The local repository is dirty or ahead of origin. Resetting it to origin/master.
+2022-07-01 21:08:43 [http-nio-8888-exec-1] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Could not reset to remote for master (current ref=refs/remotes/origin/master), remote: null
+2022-07-01 21:08:43 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server-repository\config-client-twitter_to_kafka.yml]' via location 'file:/F:/SpringBoot_Learning/Event-DrivenArchitecure/Event-driven-Service/Microservice-Demo/config-server-repository/'
+2022-07-01 21:08:43 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server-repository\config-client.yml]' via location 'file:/F:/SpringBoot_Learning/Event-DrivenArchitecure/Event-driven-Service/Microservice-Demo/config-server-repository/'
+2022-07-01 22:09:30 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-01 22:09:30 [main] INFO  c.m.d.c.s.ConfigServerApplication - Starting ConfigServerApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 38576 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\config-server\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-01 22:09:30 [main] INFO  c.m.d.c.s.ConfigServerApplication - No active profile set, falling back to 1 default profile: "default"
+2022-07-01 22:09:31 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=ae387d3f-6fd3-367a-bf3a-fe62efa73038
+2022-07-01 22:09:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-07-01 22:09:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-07-01 22:09:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-01 22:09:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-01 22:09:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-07-01 22:09:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1701 ms
+2022-07-01 22:09:35 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-07-01 22:09:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-07-01 22:09:35 [main] INFO  c.m.d.c.s.ConfigServerApplication - Started ConfigServerApplication in 6.595 seconds (JVM running for 7.242)
+2022-07-01 22:10:58 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-01 22:10:58 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-07-01 22:10:58 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-07-01 22:10:59 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\deepa\AppData\Local\Temp\config-repo-2417263080563031778\config-client-twitter_to_kafka.yml]' via location 'file:/C:/Users/deepa/AppData/Local/Temp/config-repo-2417263080563031778/'
+2022-07-01 22:10:59 [http-nio-8888-exec-1] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\deepa\AppData\Local\Temp\config-repo-2417263080563031778\config-client.yml]' via location 'file:/C:/Users/deepa/AppData/Local/Temp/config-repo-2417263080563031778/'
+2022-07-01 22:13:22 [http-nio-8888-exec-3] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\deepa\AppData\Local\Temp\config-repo-2417263080563031778\config-client.yml]' via location 'file:/C:/Users/deepa/AppData/Local/Temp/config-repo-2417263080563031778/'
+2022-07-01 22:13:29 [http-nio-8888-exec-5] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\deepa\AppData\Local\Temp\config-repo-2417263080563031778\config-client-twitter_to_kafka.yml]' via location 'file:/C:/Users/deepa/AppData/Local/Temp/config-repo-2417263080563031778/'
+2022-07-01 22:13:29 [http-nio-8888-exec-5] INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\deepa\AppData\Local\Temp\config-repo-2417263080563031778\config-client.yml]' via location 'file:/C:/Users/deepa/AppData/Local/Temp/config-repo-2417263080563031778/'
+2022-07-01 22:16:30 [Thread-3] WARN  o.s.c.c.s.e.MultipleJGitEnvironmentRepository - Failed to delete temporary directory on exit: java.nio.file.AccessDeniedException: C:\Users\deepa\AppData\Local\Temp\config-repo-2417263080563031778\.git\objects\pack\pack-1ee3b478d8398d875062196dc96d43fd324a73e2.idx

@@ -8,7 +8,9 @@
         <module>kafka</module>
 		<module>common-config</module>
 		<module>config-server</module>
-	</modules>
+        <module>kafka-to-elastic-service</module>
+        <module>elastic</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -38,6 +40,10 @@
 		<spring-boot-autoconfigure.version>2.7.1</spring-boot-autoconfigure.version>
 		<spring-cloud-starter-config.version>3.1.3</spring-cloud-starter-config.version>
 		<spring-boot-starter-security.version>2.7.1</spring-boot-starter-security.version>
+		<spring-boot-starter-data.elasticsearch>2.7.1</spring-boot-starter-data.elasticsearch>
+		<spring-web.version>5.3.21</spring-web.version>
+		<elasticsearch.version>7.17.5</elasticsearch.version>
+		<elasticsearch-rest-high-level-client.version>7.17.5</elasticsearch-rest-high-level-client.version>
 	</properties>
 
 	<repositories>
@@ -51,7 +57,48 @@
 		<dependencies>
 			<dependency>
 				<groupId>com.microservice.demo</groupId>
+				<artifactId>elastic-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>elastic-config</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>elastic-index-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>${elasticsearch.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-high-level-client</artifactId>
+				<version>${elasticsearch-rest-high-level-client.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring-web.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+				<version>${spring-boot-starter-data.elasticsearch}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
 				<artifactId>app-config-data</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>elastic-model</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
@@ -62,6 +109,11 @@
 			<dependency>
 				<groupId>com.microservice.demo</groupId>
 				<artifactId>kafka-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservice.demo</groupId>
+				<artifactId>kafka-consumer</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

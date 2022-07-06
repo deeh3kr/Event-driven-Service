@@ -1,0 +1,29 @@
+#logging:
+#  level:
+#    ROOT: DEBUG
+#    com.microservices.demo: DEBUG
+
+spring:
+  application:
+    name: elastic-query-service
+  profiles:
+    active: elastic_query
+  config:
+#    import: configserver:http://localhost:8888
+    import: configserver:http://config-server:8888
+  cloud:
+    config:
+      name: elastic-query-service,config-client
+      username: spring_cloud_user
+      password: '{cipher}0caafd0f6041ffa5d098d257ff9f1fbd2e104c4c9617d6f04a8feb4df5d1c657bb4eb64e801ef24ce403e4ce4ac4fbf8'
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    lease-expiration-duration-in-seconds: 5
+#    lease-renewal-interval-in-seconds: 2
+#
+#log:
+#  appName: elastic-query-service

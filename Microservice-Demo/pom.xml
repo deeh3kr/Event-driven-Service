@@ -46,6 +46,7 @@
 		<spring-web.version>5.3.21</spring-web.version>
 		<elasticsearch.version>7.17.5</elasticsearch.version>
 		<elasticsearch-rest-high-level-client.version>7.17.5</elasticsearch-rest-high-level-client.version>
+		<springdoc-openapi-ui.version>1.6.9</springdoc-openapi-ui.version>
 	</properties>
 
 	<repositories>
@@ -57,6 +58,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc-openapi-ui.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.microservice.demo</groupId>
 				<artifactId>app-config-data</artifactId>

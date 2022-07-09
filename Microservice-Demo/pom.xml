@@ -12,7 +12,8 @@
         <module>elastic</module>
         <module>common-util</module>
 		<module>elastic-query-service</module>
-	</modules>
+        <module>elastic-query-web-client</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -58,6 +59,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-loadbalancer</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-ui</artifactId>

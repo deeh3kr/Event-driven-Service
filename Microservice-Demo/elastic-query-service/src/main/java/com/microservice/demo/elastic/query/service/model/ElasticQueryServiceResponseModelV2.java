@@ -1,5 +1,6 @@
 package com.microservice.demo.elastic.query.service.model;
 
+import com.microservice.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

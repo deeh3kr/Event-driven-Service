@@ -15,6 +15,7 @@ import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.Query;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -60,6 +61,12 @@ public class TwitterElasticQueryClient implements ElasticQueryClient<TwitterInde
     public List<TwitterIndexModel> getIndexModelByText(String text) {
         Query query = elasticQueryUtil.getSearchQueryByFieldText(elasticQueryConfigData.getTextField(), text);
         return search(query, "{} of documents with text {} retrieved successfully", text);
+    }
+
+    @Override
+    public Flux<TwitterIndexModel> getIndexModelByTextAsFlux(String text) {
+        Query query = elasticQueryUtil.getSearchQueryByFieldText(elasticQueryConfigData.getTextField(), text);
+        return (Flux<TwitterIndexModel>) search(query, "{} of documents with text {} retrieved successfully", text);
     }
 
     @Override

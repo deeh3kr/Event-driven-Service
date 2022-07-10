@@ -9,8 +9,8 @@ spring:
   profiles:
     active: elastic_query
   config:
-#    import: configserver:http://localhost:8888
-    import: configserver:http://config-server:8888
+    import: configserver:http://localhost:8888
+#    import: configserver:http://config-server:8888
   cloud:
     config:
       name: elastic-query-service,config-client

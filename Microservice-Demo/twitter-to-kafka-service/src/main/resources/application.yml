@@ -5,12 +5,12 @@ spring:
     active: twitter_to_kafka
   config:
     import:
-      configserver:http://config-server:8888
+      configserver:http://localhost:8888
   cloud:
     config:
       name: twitter-to-kafka-service,config-client
       uri:
-        - http://config-server:8888
+        - http://localhost:8888
       username: spring_cloud_user
       password: '{cipher}ce593ba2773755d9c9981a16e1e961f5beef5bf96160cd8be74576f8e32576a6e17cf6019e1551494487eeb8454b82f9'
 

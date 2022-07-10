@@ -1,8 +1,8 @@
 package com.microservice.demo.elastic.query.service.api;
 
 import com.microservice.demo.elastic.query.service.business.ElasticQueryService;
-import com.microservice.demo.elastic.query.service.model.ElasticQueryServiceRequestModel;
-import com.microservice.demo.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.microservice.demo.elastic.query.service.common.model.ElasticQueryServiceRequestModel;
+import com.microservice.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import com.microservice.demo.elastic.query.service.model.ElasticQueryServiceResponseModelV2;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
 import java.util.List;
 
 //import java.util.List;PreAuthorize("isAuthenticated()")

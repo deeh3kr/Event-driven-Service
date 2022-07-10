@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +40,11 @@ public class TwitterElasticRepositoryQueryClient implements ElasticQueryClient<T
         List<TwitterIndexModel> searchResult = twitterElasticsearchQueryRepository.findByText(text);
         LOG.info("{} of documents with text {} retrieved successfully", searchResult.size(), text);
         return searchResult;
+    }
+
+    @Override
+    public Flux<TwitterIndexModel> getIndexModelByTextAsFlux(String text) {
+        return null;
     }
 
     @Override

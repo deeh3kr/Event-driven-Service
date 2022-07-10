@@ -40,3 +40,24 @@
 2022-07-08 10:04:36 [http-nio-8183-exec-2] WARN  org.elasticsearch.client.RestClient - request [POST http://localhost:9200/twitter-index/_search?typed_keys=true&max_concurrent_shard_requests=5&search_type=query_then_fetch&batched_reduce_size=512] returned 1 warnings: [299 Elasticsearch-7.17.5-8d61b4f7ddf931f219e3745f295ed2bbc50c8e84 "Elasticsearch built-in security features are not enabled. Without authentication, your cluster could be accessible to anyone. See https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-minimal-setup.html to enable security."]
 2022-07-08 10:04:36 [http-nio-8183-exec-2] INFO  c.m.d.e.q.c.s.i.TwitterElasticQueryClient - 5 of documents with text [spring] retrieved successfully
 2022-07-08 10:04:36 [http-nio-8183-exec-2] INFO  c.m.d.e.q.s.a.ElasticDocumentController - Elasticsearch returned 5 of documents with size: 
+2022-07-09 13:34:17 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-07-09 13:34:17 [main] INFO  c.m.d.e.q.s.ElasticQueryServiceApplication - Starting ElasticQueryServiceApplication using Java 17.0.3.1 on LAPTOP-BM6U357P with PID 21900 (F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo\elastic-query-service\target\classes started by deepa in F:\SpringBoot_Learning\Event-DrivenArchitecure\Event-driven-Service\Microservice-Demo)
+2022-07-09 13:34:17 [main] INFO  c.m.d.e.q.s.ElasticQueryServiceApplication - The following 1 profile is active: "elastic_query"
+2022-07-09 13:34:17 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2022-07-09 13:34:17 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=elastic-query-service,config-client, profiles=[elastic_query], label=null, version=a06e8815c05a855feb1167e55a6151ac9dfbbe42, state=null
+2022-07-09 13:34:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2022-07-09 13:34:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 243 ms. Found 1 Elasticsearch repository interfaces.
+2022-07-09 13:34:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2022-07-09 13:34:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2022-07-09 13:34:20 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c0ae81c7-100f-32e9-b420-da68bd5236e2
+2022-07-09 13:34:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8183 (http)
+2022-07-09 13:34:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8183"]
+2022-07-09 13:34:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-07-09 13:34:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-09 13:34:21 [main] INFO  o.a.c.c.C.[.[.[/elastic-query-service] - Initializing Spring embedded WebApplicationContext
+2022-07-09 13:34:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3294 ms
+2022-07-09 13:34:22 [I/O dispatcher 1] WARN  org.elasticsearch.client.RestClient - request [GET http://localhost:9200/] returned 1 warnings: [299 Elasticsearch-7.17.5-8d61b4f7ddf931f219e3745f295ed2bbc50c8e84 "Elasticsearch built-in security features are not enabled. Without authentication, your cluster could be accessible to anyone. See https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-minimal-setup.html to enable security."]
+2022-07-09 13:34:22 [main] WARN  org.elasticsearch.client.RestClient - request [HEAD http://localhost:9200/$%7Belastic-config.index-name%7D] returned 1 warnings: [299 Elasticsearch-7.17.5-8d61b4f7ddf931f219e3745f295ed2bbc50c8e84 "Elasticsearch built-in security features are not enabled. Without authentication, your cluster could be accessible to anyone. See https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-minimal-setup.html to enable security."]
+2022-07-09 13:34:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8183"]
+2022-07-09 13:34:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8183 (http) with context path '/elastic-query-service'
+2022-07-09 13:34:26 [main] INFO  c.m.d.e.q.s.ElasticQueryServiceApplication - Started ElasticQueryServiceApplication in 13.136 seconds (JVM running for 14.476)

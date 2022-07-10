@@ -1,8 +1,8 @@
 package com.microservice.demo.elastic.query.service.api;
 
 import com.microservice.demo.elastic.query.service.business.ElasticQueryService;
-import com.microservice.demo.elastic.query.service.model.ElasticQueryServiceRequestModel;
-import com.microservice.demo.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.microservice.demo.elastic.query.service.common.model.ElasticQueryServiceRequestModel;
+import com.microservice.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import com.microservice.demo.elastic.query.service.model.ElasticQueryServiceResponseModelV2;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
 import java.util.List;
 
 //import java.util.List;PreAuthorize("isAuthenticated()")
@@ -32,8 +31,8 @@ public class ElasticDocumentController {
         this.elasticQueryService = queryService;
     }
 
-//    @Value("${server.port}")
-//    private String port;
+    @Value("${server.port}")
+    private String port;
 
 //    @PostAuthorize("hasPermission(returnObject, 'READ')")
     @Operation(summary = "Get all elastic documents.")
@@ -134,8 +133,8 @@ public class ElasticDocumentController {
     ResponseEntity<List<ElasticQueryServiceResponseModel>>
     getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
         List<ElasticQueryServiceResponseModel> response = elasticQueryService.getDocumentByText(elasticQueryServiceRequestModel.getText(), "f");
-        LOG.info("Elasticsearch returned {} of documents with size: ",
-                response.size());
+        LOG.info("Elasticsearch returned {} of documents on port: {}",
+                response.size(), port);
         return ResponseEntity.ok(response);
     }
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.microservice.demo.elastic.model.index.IndexModel;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -15,10 +16,11 @@ import java.time.ZonedDateTime;
 
 @Data
 @Builder
-@Document(indexName = "${elastic-config.index-name}")
+@Document(indexName = "#{@elasticConfigData.indexName}")
 public class TwitterIndexModel implements IndexModel {
 
     @JsonProperty
+    @Id
     private String id;
     @JsonProperty
     private Long userId;

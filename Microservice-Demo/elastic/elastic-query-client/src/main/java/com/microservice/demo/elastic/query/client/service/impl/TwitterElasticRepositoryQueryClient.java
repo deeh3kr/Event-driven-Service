@@ -15,7 +15,7 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 import java.util.Optional;
 
-
+@Primary
 @Service
 public class TwitterElasticRepositoryQueryClient implements ElasticQueryClient<TwitterIndexModel> {
     private static final Logger LOG = LoggerFactory.getLogger(TwitterElasticRepositoryQueryClient.class);

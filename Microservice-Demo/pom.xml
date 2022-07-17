@@ -17,7 +17,8 @@
 		<module>elastic-query-web-client-common</module>
 		<module>reactive-elastic-query-service</module>
 		<module>reactive-elastic-query-web-client</module>
-	</modules>
+        <module>elastic-query-web-client-2</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -63,6 +64,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.microservice.demo</groupId>
 				<artifactId>elastic-query-web-client-common</artifactId>

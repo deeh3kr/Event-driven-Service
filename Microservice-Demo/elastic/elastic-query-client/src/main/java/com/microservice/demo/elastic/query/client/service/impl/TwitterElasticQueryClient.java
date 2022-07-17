@@ -20,7 +20,7 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Primary
+//@Primary
 @Service
 public class TwitterElasticQueryClient implements ElasticQueryClient<TwitterIndexModel> {
 

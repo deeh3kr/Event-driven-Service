@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: elastic-query-web-client-2
+  profiles:
+    active: elastic_query_web_2
+  config:
+    import: configserver:http://localhost:8888
+    #import: configserver:http://config-server:8888
+  cloud:
+    config:
+      name: elastic-query-web-client-2,config-client
+      username: spring_cloud_user
+      password: '{cipher}0caafd0f6041ffa5d098d257ff9f1fbd2e104c4c9617d6f04a8feb4df5d1c657bb4eb64e801ef24ce403e4ce4ac4fbf8'

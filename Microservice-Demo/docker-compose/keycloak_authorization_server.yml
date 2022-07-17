@@ -1,0 +1,32 @@
+version: '3.8'
+
+networks:
+  application:
+    driver: bridge
+
+services:
+  keycloak-authorization-server:
+    container_name: keycloak-server
+    image: quay.io/keycloak/keycloak:${KEYCLOAK_VERSION:-latest}
+    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    ports:
+      - "9091:8080"
+    environment:
+      - "KEYCLOAK_ADMIN=admin"
+      - "KEYCLOAK_ADMIN_PASSWORD=admin"
+      - "KC_LOG_LEVEL=INFO"
+      - "KC_DB=postgres" # database type
+      - "KC_DB_USERNAME=keycloak"
+      - "KC_DB_PASSWORD=keycloak"
+      - "KC_DB_SCHEMA=public" # only public schema works?
+      - "KC_DB_URL_DATABASE=keycloak" # database to use
+      - "KC_DB_URL_HOST=postgres" # postgres service defined above
+#      - "KC_DB_ADDR=host.docker.internal"
+#    depends_on:
+#      - postgres
+    networks:
+      - ${GLOBAL_NETWORK:-postgres}
+
+volumes:
+  postgres_data:
+    driver: local
